@@ -1,0 +1,650 @@
+/*
+  Tony Romerio Men Concept - Premium Redesign
+  Colors: Off-White / Antracite / Sabbia
+  Fonts: Plus Jakarta Sans (Headings) & Inter (Sans-Serif)
+*/
+
+/* --------------------------------------------------- */
+/* 1. Reset & Variables */
+/* --------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+:root {
+  /* Premium Palette */
+  --color-bg-light: #FAFAF8;     /* Off-White caldo */
+  --color-bg-white: #FFFFFF;     /* Bianco puro */
+  --color-text-dark: #1A1A1A;    /* Antracite morbido */
+  --color-text-light: #F0F0F0;   /* Grigio chiaro per footer */
+  --color-accent: #C5AA82;       /* Oro tenue / Sabbia */
+  --color-accent-hover: #b0956f;
+  --color-dark: #0A0A0A;         /* Nero profondo per accenti */
+  
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-hero: 'Cormorant Garamond', serif;
+  
+  /* Spacing & Layout */
+  --spacing-section: 8rem;       /* Aumentato per maggiore ariosità */
+  --spacing-container: max(1.5rem, 5vw);
+  --max-width: 1200px;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------- */
+/* 2. Typography */
+/* --------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+
+p {
+  margin-bottom: 1rem;
+}
+
+.text-center { text-align: center; }
+.mt-4 { margin-top: 1.5rem; }
+
+/* --------------------------------------------------- */
+/* 3. Layout & Utilities */
+/* --------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-container);
+}
+
+.section {
+  padding: var(--spacing-section) 0;
+}
+
+.section-title {
+  font-family: var(--font-hero);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #4A4A4A;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Backgrounds */
+.bg-light { background-color: var(--color-bg-light); }
+.bg-white { background-color: var(--color-bg-white); }
+.bg-accent { background-color: var(--color-accent); color: var(--color-bg-white); }
+.bg-accent h2, .bg-accent p { color: var(--color-bg-white); }
+.bg-dark { background-color: var(--color-dark); color: var(--color-text-light); }
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4 { color: var(--color-bg-white); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-dark);
+  color: var(--color-bg-white);
+  border: 1px solid var(--color-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg-white);
+}
+
+/* CTA Prenota Ora Hero - Più evidente */
+.btn-hero {
+  font-size: 1.1rem;
+  padding: 1.3rem 2.8rem;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-bg-white);
+  border: 1px solid var(--color-bg-white);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-bg-white);
+  color: var(--color-dark);
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--color-dark);
+  color: var(--color-bg-white);
+}
+
+/* --------------------------------------------------- */
+/* 4. Header & Logo */
+/* --------------------------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 1000;
+  background: rgba(250, 250, 248, 0.96); /* Light bg with blur */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo ingrandito */
+.logo-img {
+  height: 75px; 
+  width: auto;
+  max-height: 80px;
+  transition: height 0.3s ease;
+}
+
+.desktop-nav {
+  display: none; /* Hidden on mobile */
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.desktop-nav a {
+  color: var(--color-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.desktop-nav a:not(.btn-nav)::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-dark);
+  transition: width 0.3s ease;
+}
+
+.desktop-nav a:not(.nav-book-link):hover::after {
+  width: 100%;
+}
+
+.nav-book-link {
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.nav-book-link:hover {
+  color: var(--color-accent);
+}
+
+.nav-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: 1rem;
+  border-left: 1px solid rgba(0,0,0,0.1);
+  padding-left: 1.5rem;
+}
+
+.nav-social-icons a {
+  display: flex;
+  align-items: center;
+  color: var(--color-dark);
+  transition: color 0.3s ease;
+}
+
+.nav-social-icons a:hover {
+  color: var(--color-accent);
+}
+
+.nav-social-icons a::after {
+  display: none !important;
+}
+
+/* --------------------------------------------------- */
+/* 5. Hero Section (Video Background) */
+/* --------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 100px); /* Adjust for sticky header */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay scuro per leggibilità perfetta */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 250, 248, 0.75); 
+  background: linear-gradient(to bottom, rgba(250, 250, 248, 0.6), rgba(250, 250, 248, 0.98));
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-family: var(--font-hero);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-dark);
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Per il pulsante outline sulla hero */
+.hero-cta .btn-outline {
+  border-color: var(--color-dark);
+  color: var(--color-dark);
+}
+.hero-cta .btn-outline:hover {
+  background-color: var(--color-dark);
+  color: var(--color-bg-white);
+}
+
+/* --------------------------------------------------- */
+/* 6. Split Section (Concept) */
+/* --------------------------------------------------- */
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.split-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.split-text p {
+  color: #4A4A4A;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------- */
+/* 7. Reviews */
+/* --------------------------------------------------- */
+.reviews-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.badge-card {
+  background: var(--color-bg-light);
+  padding: 2.5rem 3.5rem;
+  border-radius: 2px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.3s ease;
+}
+
+.badge-card:hover {
+  transform: translateY(-5px);
+}
+
+.stars {
+  font-size: 2rem;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.8rem;
+}
+
+.score {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+/* --------------------------------------------------- */
+/* 8. Gallery */
+/* --------------------------------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------- */
+/* 9. Footer */
+/* --------------------------------------------------- */
+.footer {
+  padding: 5rem 0 3rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  margin-bottom: 4rem;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-contact p {
+  margin-bottom: 0.8rem;
+}
+
+.footer-contact a, .social-links a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover, .social-links a:hover {
+  color: var(--color-accent);
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.social-link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.footer-legal-info p {
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-bottom-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer-legal-links a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+  color: var(--color-accent);
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: #555;
+}
+
+/* --------------------------------------------------- */
+/* 10. Cookie Banner */
+/* --------------------------------------------------- */
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-dark);
+  color: var(--color-bg-white);
+  padding: 1.5rem;
+  z-index: 10001; /* Sopra la bottom bar */
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.cookie-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.cookie-content p {
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-light);
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-sm {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+}
+
+/* --------------------------------------------------- */
+/* 11. Mobile Bottom Bar */
+/* --------------------------------------------------- */
+.mobile-bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5rem;
+  background: rgba(250, 250, 248, 0.97);
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -4px 25px rgba(0,0,0,0.08);
+  z-index: 1000;
+  border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+.mobile-bottom-bar a {
+  color: var(--color-dark);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  gap: 0.4rem;
+}
+
+.mobile-bottom-bar .icon {
+  font-size: 1.6rem;
+}
+
+/* Padding to body to prevent content hidden behind bottom bar */
+body {
+  padding-bottom: 5rem;
+}
+
+/* --------------------------------------------------- */
+/* 11. Responsive (Desktop) */
+/* --------------------------------------------------- */
+@media (max-width: 767px) {
+  .logo-img {
+    height: 55px; /* Leggermente più piccolo su mobile ma comunque più grande di prima */
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+  
+  .split-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+  
+  .reviews-badges {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  
+  .social-links {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .footer-bottom-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .cookie-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .cookie-content p {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  .mobile-bottom-bar {
+    display: none;
+  }
+  
+  body {
+    padding-bottom: 0;
+  }
+}
