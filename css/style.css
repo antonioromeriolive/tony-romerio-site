@@ -188,9 +188,9 @@ p {
 
 /* Logo ingrandito */
 .logo-img {
-  height: 75px; 
+  height: 98px; 
   width: auto;
-  max-height: 80px;
+  max-height: 104px;
   transition: height 0.3s ease;
 }
 
@@ -592,7 +592,7 @@ body {
 /* --------------------------------------------------- */
 @media (max-width: 767px) {
   .logo-img {
-    height: 55px; /* Leggermente più piccolo su mobile ma comunque più grande di prima */
+    height: 72px; /* Leggermente più piccolo su mobile ma comunque più grande di prima */
   }
 }
 
