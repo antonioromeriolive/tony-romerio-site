@@ -1,31 +1,35 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
+document.addEventListener("DOMContentLoaded", function() {
+    // Gestione Menu Hamburger Mobile
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
-    const mobileLinks = mobileNav.querySelectorAll('a');
-
-    menuToggle.addEventListener('click', () => {
-        mobileNav.classList.toggle('active');
-        
-        // Animazione icona hamburger
-        const spans = menuToggle.querySelectorAll('span');
-        if (mobileNav.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(7px, -8px)';
-        } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
-    });
-
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            const spans = menuToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+    
+    if (menuToggle && mobileNav) {
+        // Apri/Chiudi il menu cliccando sull'hamburger
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('is-active');
+            mobileNav.classList.toggle('is-active');
+            // Blocca lo scroll del body quando il menu è aperto
+            document.body.style.overflow = this.classList.contains('is-active') ? 'hidden' : '';
         });
-    });
+
+        // Chiudi il menu cliccando su un link
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('is-active');
+                mobileNav.classList.remove('is-active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Chiudi il menu cliccando al di fuori (sull'overlay scuro/vuoto)
+        mobileNav.addEventListener('click', function(e) {
+            if (e.target === mobileNav || e.target.classList.contains('mobile-nav-content')) {
+                menuToggle.classList.remove('is-active');
+                mobileNav.classList.remove('is-active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });
