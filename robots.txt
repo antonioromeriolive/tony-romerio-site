@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tonyromerio.com/sitemap.xml
+Sitemap: https://www.tonyromerio.com/sitemap.xml
