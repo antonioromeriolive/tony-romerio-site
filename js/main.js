@@ -31,5 +31,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.body.style.overflow = '';
             }
         });
+
+        // Chiudi il menu cliccando sul logo
+        const logoLink = document.querySelector('.logo-link');
+        if (logoLink) {
+            logoLink.addEventListener('click', function() {
+                if (mobileNav.classList.contains('is-active')) {
+                    menuToggle.classList.remove('is-active');
+                    mobileNav.classList.remove('is-active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
     }
 });
