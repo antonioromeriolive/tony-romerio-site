@@ -748,6 +748,50 @@ body {
   align-self: center;
 }
 
+/* --------------------------------------------------- */
+/* 13. Sezione Esperienze (Featured Work) */
+/* --------------------------------------------------- */
+.experiences-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .experiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+.experience-card {
+  padding: 2.5rem;
+  background-color: var(--color-bg-white);
+  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.experience-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+.experience-card p {
+  color: #4A4A4A;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
   .mobile-menu-toggle {
     display: none !important;
