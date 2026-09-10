@@ -1,7 +1,7 @@
 /*
   Tony Romerio Men Concept - Premium Redesign
   Colors: Off-White / Antracite / Sabbia
-  Fonts: Plus Jakarta Sans (Headings) & Inter (Sans-Serif)
+  Fonts: Inter (Primary) & Cormorant Garamond (Accent)
 */
 
 /* --------------------------------------------------- */
@@ -29,7 +29,7 @@ html {
   --color-dark: #0A0A0A;         /* Nero profondo per accenti */
   
   /* Typography */
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Inter', sans-serif;
   --font-sans: 'Inter', sans-serif;
   --font-hero: 'Cormorant Garamond', serif;
   
@@ -676,7 +676,7 @@ p {
 }
 
 .mobile-nav-links a {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-sans);
   font-size: 2rem;
   color: var(--color-dark);
   text-decoration: none;
