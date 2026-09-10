@@ -553,49 +553,9 @@ p {
 }
 
 /* --------------------------------------------------- */
-/* 11. Mobile Bottom Bar */
-/* --------------------------------------------------- */
-.mobile-bottom-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 5rem;
-  background: rgba(250, 250, 248, 0.97);
-  backdrop-filter: blur(15px);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  box-shadow: 0 -4px 25px rgba(0,0,0,0.08);
-  z-index: 1000;
-  border-top: 1px solid rgba(0,0,0,0.04);
-}
-
-.mobile-bottom-bar a {
-  color: var(--color-dark);
-  text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  gap: 0.4rem;
-}
-
-.mobile-bottom-bar .icon {
-  font-size: 1.6rem;
-}
-
-/* Padding to body to prevent content hidden behind bottom bar */
-body {
-  padding-bottom: 5rem;
-}
-
-/* --------------------------------------------------- */
 /* 11. Responsive (Desktop) */
 /* --------------------------------------------------- */
+
 @media (max-width: 767px) {
   .logo-img {
     height: 72px; /* Leggermente più piccolo su mobile ma comunque più grande di prima */
@@ -646,13 +606,6 @@ body {
     padding-right: 2rem;
   }
   
-  .mobile-bottom-bar {
-    display: none;
-  }
-  
-  body {
-    padding-bottom: 0;
-  }
 }
 
 /* --------------------------------------------------- */
